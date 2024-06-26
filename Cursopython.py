@@ -16,11 +16,12 @@ for arquivo in lista_de_arquivos:
 
 
 # Passo 4 - Calcular o produto mais vendido (em quantidade)
-tabela_produtos = tabela_total.groupby('produtos').sum()
-tabela_produtos = tabela_produtos[["Quantidade vendida," "Preco Unitario"]]
-display(tabela_total)
+tabela_faturamento = tabela_total.groupby('Produto').sum()
+tabela_faturamento = tabela_faturamento[["Faturamento"]].sort_values(by="Faturamento", ascending=False)
+display(tabela_faturamento)
 
 # Passo 5 - Calcular o produto que mais faturo (em faturamento)
+display(tabela_total)
 
 # Calcular a cidade/loja que mais vendeu (em faturamento) - criar um grafico/dashboard
 
