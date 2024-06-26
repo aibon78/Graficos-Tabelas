@@ -12,12 +12,13 @@ for arquivo in lista_de_arquivos:
         print(f"C:\\Users\\Andre\\Desktop\\Vendas\\{arquivo}")
         tabela = pd.read_csv(f"C:\\Users\\Andre\\Desktop\\Vendas\\{arquivo}")
         tabela_total = tabela_total.append(tabela)
-display(tabela_total)
 
 
 
 # Passo 4 - Calcular o produto mais vendido (em quantidade)
-'''tabela_produto = tabela_total.groupby('produtos')'''
+tabela_produtos = tabela_total.groupby('produtos').sum()
+tabela_produtos = tabela_produtos[["Quantidade vendida," "Preco Unitario"]]
+display(tabela_total)
 
 # Passo 5 - Calcular o produto que mais faturo (em faturamento)
 
